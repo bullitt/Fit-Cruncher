@@ -24,9 +24,9 @@ class sas_result(object):
         self.chi_collect={}
         self.pymol_cmd='pymol'
         #self.dmax=75.0
-        #self.dmaxunit=''
+        #self.dmaxunit='ï¿½'
         #self.rg=30.0
-        #self.rgunit=''
+        #self.rgunit='ï¿½'
         self.folderreader()
     def folderreader(self):
         self.programlist=[]
@@ -113,8 +113,8 @@ class sas_result(object):
             if len(self.top_ten)>10:
                 break
         print self.top_ten        
-        subprocess.call(['/Applications/Structural/MACPymol.app','13.pdb'])#self.top_ten[0]])#,self.top_ten[1],self.top_ten[2],self.top_ten[3],self.top_ten[4],
-                         #self.top_ten[5],self.top_ten[6],self.top_ten[7],self.top_ten[8],self.top_ten[9]])
+        subprocess.call(['open', '/Applications/Structural/MACPymol.app',self.top_ten[0],self.top_ten[1],self.top_ten[2],self.top_ten[3],self.top_ten[4],
+                         self.top_ten[5],self.top_ten[6],self.top_ten[7],self.top_ten[8],self.top_ten[9]])
 
 start_path=easygui.diropenbox('Please select folder to scan',
                               'Scan folders for files',
